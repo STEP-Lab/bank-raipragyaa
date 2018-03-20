@@ -1,8 +1,9 @@
-.idea/
-.gradle/
-build.gradle
-gradle/
 build/
+.settings/
+.vscode/
+gradle/
 gradlew
 gradlew.bat
-settings.gradle
+.gradle
+.idea
+**/out/**
