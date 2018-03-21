@@ -32,4 +32,9 @@ public class Account {
         balance -= amount;
         return balance;
     }
+
+    public double credit(int amount) {
+        balance += amount;
+        return balance;
+    }
 }
