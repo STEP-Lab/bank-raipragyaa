@@ -1,6 +1,5 @@
-import com.step.bank.Account;
-import com.step.bank.InvalidAccNumberException;
-import com.step.bank.MinimumBalanceException;
+package com.step.bank;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -13,7 +12,7 @@ public class AccountTest {
 
     @Before
     public void setUp() throws MinimumBalanceException,InvalidAccNumberException {
-        account = new Account("1234-5678", 2000);
+        account = new Account(new AccountNumber("1234-5678"), 2000);
     }
 
     @Test
@@ -21,14 +20,10 @@ public class AccountTest {
         assertThat(account.getBalance(), is(2000.0));
     }
 
-    @Test
-    public void checkAccNumber(){
-        assertThat(account.getAccNumber(),is("1234-5678"));
-    }
-
+   
     @Test(expected = MinimumBalanceException.class)
     public void checkMinimumBalance() throws MinimumBalanceException,InvalidAccNumberException {
-        Account account = new Account("1234-5678", 300);
+        Account account = new Account(new AccountNumber("1234-5678"), 300);
     }
 
     @Test
@@ -54,4 +49,5 @@ public class AccountTest {
         account.credit(2000);
         assertThat(account.getBalance(),is(4000.0));
     }
+    
 }
