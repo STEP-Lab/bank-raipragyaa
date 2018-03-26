@@ -12,4 +12,8 @@ public class Transactions {
     public void debit(float amount,String name){
         this.list.add(new DebitTransaction(amount,name));
     }
+
+    public void credit(float amount, String name) {
+        this.list.add(new CreditTransaction(amount,name));
+    }
 }
